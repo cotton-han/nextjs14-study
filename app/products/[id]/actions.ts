@@ -21,5 +21,5 @@ export async function deleteProduct(id: number) {
     where: { id },
   });
 
-  revalidatePath("/products");
+  revalidatePath("/home");
 }

@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
   const exists = publicOnlyUrls[request.nextUrl.pathname];
 
   if (session.id && exists) {
-    return NextResponse.redirect(new URL("/products", request.url));
+    return NextResponse.redirect(new URL("/home", request.url));
   }
 
   if (!session.id && !exists) {
