@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "SMSCode" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "code" TEXT NOT NULL,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" DATETIME NOT NULL,
+    "userId" INTEGER NOT NULL,
+    CONSTRAINT "SMSCode_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SMSCode_code_key" ON "SMSCode"("code");
